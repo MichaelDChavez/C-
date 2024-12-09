@@ -1,0 +1,25 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar al usuario un número
+        Console.WriteLine("Ingrese un numero entero para calcular su factorial:");
+        int numero = Convert.ToInt32(Console.ReadLine());
+        // Verificar si el número es negativo
+        if (numero < 0)
+        {
+            Console.WriteLine("El factorial no esta definido para numeros negativos.");
+            return;
+        }
+        // Calcular el factorial
+        long factorial = 1; // Usamos long para manejar números grandes
+        for (int i = 1; i <= numero; i++)
+        {
+            factorial *= i; // Multiplicar por el contador actual
+        }
+        // Mostrar el resultado
+        Console.WriteLine($"El factorial de {numero} es: {factorial}");
+    }
+}
+

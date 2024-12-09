@@ -1,0 +1,17 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Variable para almacenar la suma
+        int suma = 0;
+        // Usamos un bucle for para sumar los números del 1 al 20
+        for (int i = 1; i <= 20; i++)
+        {
+            suma += i; // Añadimos cada número a la suma
+        }
+        // Mostramos el resultado
+        Console.WriteLine($"La suma de los primeros 20 nUmeros naturales es: {suma}");
+    }
+}
+

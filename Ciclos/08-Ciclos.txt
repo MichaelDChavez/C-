@@ -1,0 +1,29 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Número de filas en la pirámide
+        int filas = 4;
+        // Variable para llevar el conteo de números
+        int numero = 1;
+        // Generar la pirámide
+        for (int i = 1; i <= filas; i++)
+        {
+            // Imprimir espacios iniciales para centrar la pirámide
+            for (int espacio = 1; espacio <= filas - i; espacio++)
+            {
+                Console.Write(" ");
+            }
+            // Imprimir los números de la fila
+            for (int j = 1; j <= i; j++)
+            {
+                Console.Write(numero + " ");
+                numero++; // Incrementar el número
+            }
+            // Salto de línea después de cada fila
+            Console.WriteLine();
+        }
+    }
+}
+

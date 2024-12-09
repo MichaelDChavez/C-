@@ -1,0 +1,34 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Número de filas del patrón
+        int filas = 7;
+        // Generar el patrón de "Z"
+        for (int i = 1; i <= filas; i++)
+        {
+            for (int j = 1; j <= filas; j++)
+            {
+                // Primera fila o última fila: imprimir asteriscos
+                if (i == 1 || i == filas)
+                {
+                    Console.Write("*");
+                }
+                // Diagonal inversa: verificar si la columna coincide con la fila inversa
+                else if (j == filas - i + 1)
+                {
+                    Console.Write("*");
+                }
+                // Espacios en cualquier otro caso
+                else
+                {
+                    Console.Write(" ");
+                }
+            }
+            // Salto de línea después de cada fila
+            Console.WriteLine();
+        }
+    }
+}
+

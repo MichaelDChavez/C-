@@ -1,0 +1,34 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Solicitar al usuario el número de términos de la serie de Fibonacci
+        Console.WriteLine("Ingrese el numero de terminos de la serie de Fibonacci:");
+        int n = Convert.ToInt32(Console.ReadLine());
+        // Verificar que el número sea válido
+        if (n <= 0)
+        {
+            Console.WriteLine("Por favor, ingrese un número mayor a 0.");
+            return;
+        }
+        // Inicializar los dos primeros términos de Fibonacci
+        int fib1 = 0, fib2 = 1;
+        int suma = 0; // Para almacenar la suma de los términos
+        Console.WriteLine($"Los primeros {n} terminos de la serie de Fibonacci son:");
+        // Calcular y mostrar los términos de Fibonacci
+        for (int i = 1; i <= n; i++)
+        {
+            Console.Write($"{fib1} "); // Mostrar el termino actual
+            suma += fib1; // Agregar el termino actual a la suma
+            // Calcular el siguiente termino
+            int siguiente = fib1 + fib2;
+            fib1 = fib2;
+            fib2 = siguiente;
+        }
+        // Mostrar la suma total
+        Console.WriteLine($"\nLa suma de los primeros {n} terminos de la serie de Fibonacci es: {suma}");
+    }
+}
+

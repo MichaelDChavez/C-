@@ -1,0 +1,21 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar al usuario un número entero
+        Console.WriteLine("Ingrese un numero entero para mostrar su tabla de multiplicar:");
+        int numero = Convert.ToInt32(Console.ReadLine());
+        // Mostrar la tabla de multiplicar del número dado
+        Console.WriteLine($"Tabla de multiplicar del {numero}:");
+        // Usamos un bucle para generar la tabla de multiplicar del 1 al 10
+        for (int i = 1; i <= 10; i++)
+        {
+            // Calcular el resultado de la multiplicación
+            int resultado = numero * i;
+            // Mostrar el resultado
+            Console.WriteLine($"{numero} x {i} = {resultado}");
+        }
+    }
+}
+

@@ -1,0 +1,16 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Mostrar un mensaje inicial
+        Console.WriteLine("Los primeros 10 numeros naturales son:");
+        // Usamos un bucle for para iterar del 1 al 10
+        for (int i = 1; i <= 10; i++)
+        {
+            // Mostramos el número actual
+            Console.WriteLine(i);
+        }
+    }
+}
+

@@ -1,0 +1,25 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        double suma = 0; // Inicializamos la suma
+        int cantidadNumeros = 10; // Definimos la cantidad de numeros a leer
+        // Solicitar al usuario que ingrese 10 números
+        Console.WriteLine("Por favor, ingrese 10 numeros:");
+        // Usamos un bucle para leer los 10 números
+        for (int i = 1; i <= cantidadNumeros; i++)
+        {
+            Console.WriteLine($"Ingrese el numero {i}:");
+            double numero = Convert.ToDouble(Console.ReadLine());
+            // Agregar el numero ingresado a la suma
+            suma += numero;
+        }
+        // Calcular el promedio
+        double promedio = suma / cantidadNumeros;
+        // Mostrar los resultados
+        Console.WriteLine($"La suma de los 10 numeros es: {suma}");
+        Console.WriteLine($"El promedio de los 10 numeros es: {promedio}");
+    }
+}
+
