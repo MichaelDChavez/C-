@@ -1,0 +1,60 @@
+using System;
+class Vehiculo
+{
+    // Atributos de la clase
+    public string Placa { get; set; }
+    // Constructor para inicializar el vehículo con su placa
+    public Vehiculo(string placa)
+    {
+        Placa = placa;
+    }
+    // Método para verificar si el vehículo tiene restricción
+    public bool TieneRestriccion(DateTime fecha)
+    {
+        // Obtener el último dígito de la placa
+        char ultimoDigitoChar = Placa[^1];
+        int ultimoDigito = int.Parse(ultimoDigitoChar.ToString());
+        // Verificar si la fecha es día par o impar
+        bool esDiaPar = fecha.Day % 2 == 0;
+
+        // Días pares: 6, 7, 8, 9, 0 pueden circular
+        if (esDiaPar)
+        {
+            return !(ultimoDigito == 6 || ultimoDigito == 7 || ultimoDigito == 8 || ultimoDigito == 9 || ultimoDigito == 0);
+        }
+        // Días impares: 1, 2, 3, 4, 5 pueden circular
+        else
+        {
+            return !(ultimoDigito == 1 || ultimoDigito == 2 || ultimoDigito == 3 || ultimoDigito == 4 || ultimoDigito == 5);
+        }
+    }
+    // Método para mostrar el estado del vehículo
+    public void MostrarEstado(DateTime fecha)
+    {
+        if (TieneRestriccion(fecha))
+        {
+            Console.WriteLine($"El vehiculo con placa {Placa} tiene restriccion el {fecha:dd/MM/yyyy}.");
+        }
+        else
+        {
+            Console.WriteLine($"El vehiculo con placa {Placa} puede circular el {fecha:dd/MM/yyyy}.");
+        }
+    }
+}
+class Program
+{
+    static void Main()
+    {
+        // Solicitar la placa al usuario
+        Console.WriteLine("Ingrese la placa del vehiculo:");
+        string placa = Console.ReadLine();
+        // Crear una instancia de Vehículo
+        Vehiculo miVehiculo = new Vehiculo(placa);
+        // Solicitar la fecha
+        Console.WriteLine("Ingrese la fecha (formato: dd/mm/yyyy):");
+        DateTime fecha = DateTime.Parse(Console.ReadLine());
+        // Mostrar si el vehículo tiene restricción
+        miVehiculo.MostrarEstado(fecha);
+    }
+}
+

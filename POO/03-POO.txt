@@ -1,0 +1,49 @@
+using System;
+
+class Circle
+{
+    // Atributo para el radio
+    public double Radio { get; set; }
+
+    // Constructor para inicializar el radio
+    public Circle(double radio)
+    {
+        Radio = radio;
+    }
+
+    // Método para calcular el área del círculo
+    public double CalcularArea()
+    {
+        return Math.PI * Radio * Radio;
+    }
+
+    // Método para calcular el perímetro del círculo
+    public double CalcularPerimetro()
+    {
+        return 2 * Math.PI * Radio;
+    }
+
+    // Método para mostrar los detalles del círculo
+    public void MostrarDetalles()
+    {
+        Console.WriteLine($"Circulo con radio {Radio}:");
+        Console.WriteLine($"Area: {CalcularArea():F2}");
+        Console.WriteLine($"Perimetro: {CalcularPerimetro():F2}");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Solicitar al usuario el radio del círculo
+        Console.WriteLine("Ingrese el radio del circulo:");
+        double radio = double.Parse(Console.ReadLine());
+
+        // Crear una instancia de Circle
+        Circle miCirculo = new Circle(radio);
+
+        // Mostrar los detalles del círculo
+        miCirculo.MostrarDetalles();
+    }
+}

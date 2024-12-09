@@ -1,0 +1,48 @@
+using System;
+
+class Rectangle
+{
+    // Atributos de la clase
+    public double Longitud { get; set; }
+    public double Anchura { get; set; }
+
+    // Constructor para inicializar la longitud y la anchura
+    public Rectangle(double longitud, double anchura)
+    {
+        Longitud = longitud;
+        Anchura = anchura;
+    }
+
+    // Método para calcular el área del rectángulo
+    public double CalcularArea()
+    {
+        return Longitud * Anchura;
+    }
+
+    // Método para mostrar los detalles del rectángulo
+    public void MostrarDetalles()
+    {
+        Console.WriteLine($"Rectangulo con longitud {Longitud} y anchura {Anchura}:");
+        Console.WriteLine($"Area: {CalcularArea()}");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Solicitar al usuario la longitud y la anchura
+        Console.WriteLine("Ingrese la longitud del rectangulo:");
+        double longitud = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("Ingrese la anchura del rectangulo:");
+        double anchura = double.Parse(Console.ReadLine());
+
+        // Crear una instancia de Rectangle
+        Rectangle miRectangulo = new Rectangle(longitud, anchura);
+
+        // Mostrar los detalles y el área del rectángulo
+        miRectangulo.MostrarDetalles();
+    }
+}
+

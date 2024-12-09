@@ -1,0 +1,56 @@
+using System;
+
+class PowerCalculator
+{
+    // Método para calcular x elevado a la potencia n
+    public double Pow(double baseNumber, int exponent)
+    {
+        double result = 1;
+
+        // Caso para exponentes positivos
+        if (exponent > 0)
+        {
+            for (int i = 0; i < exponent; i++)
+            {
+                result *= baseNumber;
+            }
+        }
+        // Caso para exponentes negativos
+        else if (exponent < 0)
+        {
+            for (int i = 0; i < Math.Abs(exponent); i++)
+            {
+                result *= baseNumber;
+            }
+            result = 1 / result;
+        }
+        // Si el exponente es 0, el resultado es 1 (x^0 = 1)
+        return result;
+    }
+
+    // Método para mostrar el resultado
+    public void MostrarResultado(double baseNumber, int exponent)
+    {
+        double resultado = Pow(baseNumber, exponent);
+        Console.WriteLine($"{baseNumber}^{exponent} = {resultado}");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Solicitar base y exponente al usuario
+        Console.WriteLine("Ingrese la base (x):");
+        double baseNumber = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("Ingrese el exponente (n):");
+        int exponent = int.Parse(Console.ReadLine());
+
+        // Crear una instancia de PowerCalculator
+        PowerCalculator calculator = new PowerCalculator();
+
+        // Mostrar el resultado
+        calculator.MostrarResultado(baseNumber, exponent);
+    }
+}

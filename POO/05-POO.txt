@@ -1,0 +1,93 @@
+using System;
+
+// Clase Padre: Ave
+class Ave
+{
+    // Atributos comunes para todas las aves
+    public string Nombre { get; set; }
+    public string Color { get; set; }
+    public double Tamano { get; set; } // Tamaño en cm
+
+    // Constructor para inicializar los atributos
+    public Ave(string nombre, string color, double tamano)
+    {
+        Nombre = nombre;
+        Color = color;
+        Tamano = tamano;
+    }
+
+    // Método para que el ave realice un sonido (puede ser sobreescrito por las clases hijas)
+    public virtual void EmitirSonido()
+    {
+        Console.WriteLine($"{Nombre} esta emitiendo un sonido generico.");
+    }
+
+    // Método para describir al ave
+    public void DescribirAve()
+    {
+        Console.WriteLine($"Nombre: {Nombre}, Color: {Color}, Tamano: {Tamano} cm.");
+    }
+}
+
+// Clase Hija: Loro
+class Loro : Ave
+{
+    public Loro(string color, double tamano)
+        : base("Loro", color, tamano) { }
+
+    // Sobrescribir el método EmitirSonido
+    public override void EmitirSonido()
+    {
+        Console.WriteLine("El loro dice: Hola! Hola!");
+    }
+}
+
+// Clase Hija: Águila
+class Aguila : Ave
+{
+    public Aguila(double tamano)
+        : base("Aguila", "Marron con blanco", tamano) { }
+
+    // Sobrescribir el método EmitirSonido
+    public override void EmitirSonido()
+    {
+        Console.WriteLine("El aguila emite un fuerte grito: Ki-aaah!");
+    }
+}
+
+// Clase Hija: Pingüino
+class Pinguino : Ave
+{
+    public Pinguino(double tamano)
+        : base("Pinguino", "Blanco y negro", tamano) { }
+
+    // Sobrescribir el método EmitirSonido
+    public override void EmitirSonido()
+    {
+        Console.WriteLine("El pinguino emite un sonido: Quack! Quack!");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Crear instancias de diferentes aves
+        Loro miLoro = new Loro("Verde", 30);
+        Aguila miAguila = new Aguila(100);
+        Pinguino miPinguino = new Pinguino(60);
+
+        // Describir y emitir sonidos de cada ave
+        Console.WriteLine("=== Loro ===");
+        miLoro.DescribirAve();
+        miLoro.EmitirSonido();
+
+        Console.WriteLine("\n=== Aguila ===");
+        miAguila.DescribirAve();
+        miAguila.EmitirSonido();
+
+        Console.WriteLine("\n=== Pinguino ===");
+        miPinguino.DescribirAve();
+        miPinguino.EmitirSonido();
+    }
+}
