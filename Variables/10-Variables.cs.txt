@@ -1,0 +1,23 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar el salario diario
+        Console.WriteLine("Ingrese el salario diario del empleado:");
+        double salarioDiario = Convert.ToDouble(Console.ReadLine());
+        // Solicitar el número de días trabajados
+        Console.WriteLine("Ingrese el numero de dias trabajados:");
+        int diasTrabajados = Convert.ToInt32(Console.ReadLine());
+        // Calcular el salario bruto
+        double salarioBruto = salarioDiario * diasTrabajados;
+        // Calcular los descuentos
+        double descuentoPension = salarioBruto * 0.10;
+        double descuentoSalud = salarioBruto * 0.15;
+        // Calcular el salario neto
+        double salarioNeto = salarioBruto - descuentoPension - descuentoSalud;
+        // Mostrar el resultado
+        Console.WriteLine($"El salario neto a pagar es: {salarioNeto}");
+    }
+}
+

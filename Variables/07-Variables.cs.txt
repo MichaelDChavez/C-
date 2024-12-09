@@ -1,0 +1,15 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar al usuario la longitud de un lado del cuadrado
+        Console.WriteLine("Ingrese la longitud de un lado del cuadrado:");
+        double lado = Convert.ToDouble(Console.ReadLine());
+        // Calcular el área del cuadrado
+        double area = lado * lado;
+        // Mostrar el resultado
+        Console.WriteLine($"El area del cuadrado con lado {lado} es: {area}");
+    }
+}
+

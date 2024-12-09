@@ -1,0 +1,18 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar el anio actual
+        Console.WriteLine("Ingrese el anio actual:");
+        int añoActual = Convert.ToInt32(Console.ReadLine());
+        // Solicitar el anio de nacimiento del usuario
+        Console.WriteLine("Ingrese su anio de nacimiento:");
+        int añoNacimiento = Convert.ToInt32(Console.ReadLine());
+        // Calcular la edad
+        int edad = añoActual - añoNacimiento;
+        // Mostrar la edad
+        Console.WriteLine($"Usted tiene {edad} anios.");
+    }
+}
+

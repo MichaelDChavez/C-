@@ -1,0 +1,15 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar al usuario un número
+        Console.WriteLine("Ingrese un numero para calcular el 20%:");
+        double numero = Convert.ToDouble(Console.ReadLine());
+        // Calcular el 20% del número
+        double porcentaje20 = numero * 0.20;
+        // Mostrar el resultado
+        Console.WriteLine($"El 20% de {numero} es: {porcentaje20}");
+    }
+}
+

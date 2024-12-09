@@ -1,0 +1,17 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar el tiempo en segundos
+        Console.WriteLine("Ingrese el tiempo en segundos:");
+        int segundos = Convert.ToInt32(Console.ReadLine());
+        // Calcular horas, minutos y segundos restantes
+        int horas = segundos / 3600;
+        int minutos = (segundos % 3600) / 60;
+        int segundosRestantes = segundos % 60;
+        // Mostrar el resultado
+        Console.WriteLine($"El tiempo es: {horas} horas, {minutos} minutos y {segundosRestantes} segundos.");
+    }
+}
+

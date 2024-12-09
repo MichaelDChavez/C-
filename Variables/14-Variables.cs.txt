@@ -1,0 +1,19 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar la distancia en metros
+        Console.WriteLine("Ingrese la distancia en metros:");
+        double metros = Convert.ToDouble(Console.ReadLine());
+        // Convertir a kilómetros, centímetros y milímetros
+        double kilometros = metros / 1000;
+        double centimetros = metros * 100;
+        double milimetros = metros * 1000;
+        // Mostrar los resultados
+        Console.WriteLine($"Distancia en kilometros: {kilometros} km");
+        Console.WriteLine($"Distancia en centimetros: {centimetros} cm");
+        Console.WriteLine($"Distancia en milimetros: {milimetros} mm");
+    }
+}
+

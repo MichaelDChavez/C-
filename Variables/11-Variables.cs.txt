@@ -1,0 +1,20 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar al usuario un número
+        Console.WriteLine("Ingrese un numero para calcular su raiz cuadrada:");
+        double numero = Convert.ToDouble(Console.ReadLine());
+        // Calcular la raíz cuadrada manualmente usando el método de aproximación
+        double raiz = numero / 2; // Suposición inicial
+        double precision = 0.00001; // Precisión deseada
+        while (Math.Abs(raiz * raiz - numero) > precision)
+        {
+            raiz = (raiz + numero / raiz) / 2;
+        }
+        // Mostrar el resultado
+        Console.WriteLine($"La raiz cuadrada aproximada de {numero} es: {raiz}");
+    }
+}
+

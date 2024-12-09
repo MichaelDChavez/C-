@@ -1,0 +1,18 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar al usuario la velocidad en Km/h
+        Console.WriteLine("Ingrese la velocidad en kilometros por hora (Km/h):");
+        double velocidad = Convert.ToDouble(Console.ReadLine());     
+        // Solicitar al usuario el tiempo en horas
+        Console.WriteLine("Ingrese el tiempo en horas:");
+        double tiempo = Convert.ToDouble(Console.ReadLine());
+        // Calcular la distancia recorrida
+        double distancia = velocidad * tiempo;
+        // Mostrar el resultado
+        Console.WriteLine($"La distancia recorrida es: {distancia} Km");
+    }
+}
+

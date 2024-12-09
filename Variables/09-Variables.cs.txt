@@ -1,0 +1,22 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar el valor unitario del producto
+        Console.WriteLine("Ingrese el valor unitario del producto:");
+        double valorUnitario = Convert.ToDouble(Console.ReadLine());
+        // Solicitar la cantidad de productos comprados
+        Console.WriteLine("Ingrese la cantidad de productos comprados:");
+        int cantidad = Convert.ToInt32(Console.ReadLine());
+        // Calcular el valor total sin IVA
+        double totalSinIVA = valorUnitario * cantidad;
+        // Calcular el IVA (16%)
+        double IVA = totalSinIVA * 0.16;
+        // Calcular el total con IVA
+        double totalConIVA = totalSinIVA + IVA;
+        // Mostrar el resultado
+        Console.WriteLine($"El total a pagar con IVA incluido es: {totalConIVA}");
+    }
+}
+

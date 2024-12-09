@@ -1,0 +1,15 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar al usuario un numero
+        Console.WriteLine("Ingrese un numero para calcular su cuadrado:");
+        double numero = Convert.ToDouble(Console.ReadLine());
+        // Calcular el cuadrado del numero
+        double cuadrado = numero * numero;
+        // Mostrar el resultado
+        Console.WriteLine($"El cuadrado de {numero} es: {cuadrado}");
+    }
+}
+
