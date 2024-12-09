@@ -1,0 +1,244 @@
+Funciones
+1. Escriba una función para encontrar el máximo de tres números.
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Ingrese tres numeros:");
+        int num1 = Convert.ToInt32(Console.ReadLine());
+        int num2 = Convert.ToInt32(Console.ReadLine());
+        int num3 = Convert.ToInt32(Console.ReadLine());
+        int maximo = MaximoDeTres(num1, num2, num3);
+        Console.WriteLine($"El maximo de los tres numeros es: {maximo}");
+    }
+    static int MaximoDeTres(int a, int b, int c)
+    {
+        return Math.Max(a, Math.Max(b, c));
+    }
+}
+
+2. Escriba un programa para calcular las áreas de las figuras geométricas utilizando una función para cada área.
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Area de un circulo (radio = 5): " + AreaCirculo(5));
+        Console.WriteLine("Area de un rectangulo (largo = 4, ancho = 6): " + AreaRectangulo(4, 6));
+        Console.WriteLine("Area de un triangulo (base = 3, altura = 7): " + AreaTriangulo(3, 7));
+    }
+    static double AreaCirculo(double radio)
+    {
+        return Math.PI * radio * radio;
+    }
+    static double AreaRectangulo(double largo, double ancho)
+    {
+        return largo * ancho;
+    }
+    static double AreaTriangulo(double baseT, double altura)
+    {
+        return 0.5 * baseT * altura;
+    }
+}
+3. Escriba una función para sumar todos los números de una lista. Lista de muestras: (8, 2, 3, 0, 7) Resultado esperado: 20.
+using System;
+class Program
+{
+    static void Main()
+    {
+        int[] lista = { 8, 2, 3, 0, 7 };
+        Console.WriteLine("La suma de los elementos es: " + SumarLista(lista));
+    }
+    static int SumarLista(int[] numeros)
+    {
+        int suma = 0;
+        foreach (int numero in numeros)
+        {
+            suma += numero;
+        }
+        return suma;
+    }
+}
+4. Escriba una función para multiplicar todos los números de una lista. Lista de muestra: (8, 2, 3, -1, 7)Resultado esperado: -336
+using System;
+class Program
+{
+    static void Main()
+    {
+        int[] lista = { 8, 2, 3, -1, 7 };
+        Console.WriteLine("El producto de los elementos es: " + MultiplicarLista(lista));
+    }
+    static int MultiplicarLista(int[] numeros)
+    {
+        int producto = 1;
+        foreach (int numero in numeros)
+        {
+            producto *= numero;
+        }
+        return producto;
+    }
+}
+
+5. Escriba un programa para invertir una cadena. Cadena de ejemplo: "1234abcd" Resultado esperado: "dcba4321"
+using System;
+class Program
+{
+    static void Main()
+    {
+        string cadena = "1234abcd";
+        Console.WriteLine($"Cadena invertida: {InvertirCadena(cadena)}");
+    }
+    static string InvertirCadena(string cadena)
+    {
+        char[] caracteres = cadena.ToCharArray();
+        Array.Reverse(caracteres);
+        return new string(caracteres);
+    }
+}
+6. Escriba una función para calcular el factorial de un número (un entero no negativo). La función acepta el número como argumento.
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Ingrese un numero para calcular su factorial:");
+        int numero = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine($"El factorial de {numero} es: {Factorial(numero)}");
+    }
+    static long Factorial(int n)
+    {
+        if (n == 0) return 1;
+        long resultado = 1;
+        for (int i = 1; i <= n; i++)
+        {
+            resultado *= i;
+        }
+        return resultado;
+    }
+}
+
+7. Escriba una función para comprobar si un número cae en un rango determinado. Defina como parámetros rango de inicio, número y rango final.
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Ingrese un número, inicio del rango y fin del rango:");
+        int numero = Convert.ToInt32(Console.ReadLine());
+        int inicio = Convert.ToInt32(Console.ReadLine());
+        int fin = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine(EnRango(numero, inicio, fin)
+            ? $"{numero} está dentro del rango."
+            : $"{numero} está fuera del rango.");
+    }
+    static bool EnRango(int numero, int inicio, int fin)
+    {
+        return numero >= inicio && numero <= fin;
+    }
+}
+8. Escriba una función que acepte una cadena y calcule el número de letras mayúsculas y minúsculas.
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Ingrese una cadena:");
+        string cadena = Console.ReadLine();
+        ContarLetras(cadena);
+    }
+    static void ContarLetras(string cadena)
+    {
+        int mayusculas = 0, minusculas = 0;
+        foreach (char c in cadena)
+        {
+            if (char.IsUpper(c)) mayusculas++;
+            if (char.IsLower(c)) minusculas++;
+        }
+        Console.WriteLine($"Mayúsculas: {mayusculas}, Minúsculas: {minusculas}");
+    }
+}
+9. Escriba una función que tome una lista y devuelva una nueva lista con elementos únicos de la primera lista.
+using System;
+using System.Linq;
+class Program
+{
+    static void Main()
+    {
+        int[] lista = { 1, 2, 2, 3, 4, 4, 5, 6,7 ,7 , 8 };
+        int[] unicos = ElementosUnicos(lista);
+        Console.WriteLine("Elementos unicos: " + string.Join(", ", unicos));
+    }
+    static int[] ElementosUnicos(int[] numeros)
+    {
+        return numeros.Distinct().ToArray();
+    }
+}
+10. Escriba una función que tome un número como parámetro y verifique que el número sea primo o no. Un número primo (o primo) es un número natural mayor que 1 y que no tiene divisores positivos aparte de 1 y sí mismo.
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Ingrese un numero:");
+        int numero = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine(EsPrimo(numero) ? "Es primo." : "No es primo.");
+    }
+    static bool EsPrimo(int n)
+    {
+        if (n <= 1) return false;
+        for (int i = 2; i <= Math.Sqrt(n); i++)
+        {
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
+}
+11. Escriba un programa para imprimir los números pares de una lista determinada.
+using System;
+class Program
+{
+    static void Main()
+    {
+        int[] lista = { 1, 2, 3, 4, 5, 6 };
+        Console.WriteLine("Numeros pares: " + string.Join(", ", NumerosPares(lista)));
+    }
+    static int[] NumerosPares(int[] numeros)
+    {
+        return Array.FindAll(numeros, n => n % 2 == 0);
+    }
+}
+12. Escriba una función que compruebe si una cadena frase o palabra pasada es palíndromo o no. Una palabra o frase que es palíndromo se lee igual de izquierda a derecha que de derecha a izquierda. Por ejemplo: Ana, Anita lava la tina.
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Ingrese una palabra o frase:");
+        string cadena = Console.ReadLine();
+
+        if (EsPalindromo(cadena))
+        {
+            Console.WriteLine("Es un palindromo.");
+        }
+        else
+        {
+            Console.WriteLine("No es un palindromo.");
+        }
+    }
+    static bool EsPalindromo(string cadena)
+    {
+        // Convertir a minúsculas y eliminar espacios
+        cadena = cadena.Replace(" ", "").ToLower();
+        // Invertir la cadena
+        string invertida = "";
+        for (int i = cadena.Length - 1; i >= 0; i--)
+        {
+            invertida += cadena[i];
+        }
+        // Verificar si es igual a la original
+        return cadena == invertida;
+    }
+}
+
+
