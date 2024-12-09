@@ -1,0 +1,32 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Ingrese una palabra o frase:");
+        string cadena = Console.ReadLine();
+
+        if (EsPalindromo(cadena))
+        {
+            Console.WriteLine("Es un palindromo.");
+        }
+        else
+        {
+            Console.WriteLine("No es un palindromo.");
+        }
+    }
+    static bool EsPalindromo(string cadena)
+    {
+        // Convertir a minúsculas y eliminar espacios
+        cadena = cadena.Replace(" ", "").ToLower();
+        // Invertir la cadena
+        string invertida = "";
+        for (int i = cadena.Length - 1; i >= 0; i--)
+        {
+            invertida += cadena[i];
+        }
+        // Verificar si es igual a la original
+        return cadena == invertida;
+    }
+}
+

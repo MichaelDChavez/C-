@@ -1,0 +1,19 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        int[] lista = { 8, 2, 3, -1, 7 };
+        Console.WriteLine("El producto de los elementos es: " + MultiplicarLista(lista));
+    }
+    static int MultiplicarLista(int[] numeros)
+    {
+        int producto = 1;
+        foreach (int numero in numeros)
+        {
+            producto *= numero;
+        }
+        return producto;
+    }
+}
+

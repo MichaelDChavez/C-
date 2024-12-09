@@ -1,0 +1,21 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Ingrese una cadena:");
+        string cadena = Console.ReadLine();
+        ContarLetras(cadena);
+    }
+    static void ContarLetras(string cadena)
+    {
+        int mayusculas = 0, minusculas = 0;
+        foreach (char c in cadena)
+        {
+            if (char.IsUpper(c)) mayusculas++;
+            if (char.IsLower(c)) minusculas++;
+        }
+        Console.WriteLine($"Mayúsculas: {mayusculas}, Minúsculas: {minusculas}");
+    }
+}
+

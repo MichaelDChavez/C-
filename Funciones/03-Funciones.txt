@@ -1,0 +1,19 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        int[] lista = { 8, 2, 3, 0, 7 };
+        Console.WriteLine("La suma de los elementos es: " + SumarLista(lista));
+    }
+    static int SumarLista(int[] numeros)
+    {
+        int suma = 0;
+        foreach (int numero in numeros)
+        {
+            suma += numero;
+        }
+        return suma;
+    }
+}
+
