@@ -1,0 +1,275 @@
+Variables
+1. Programa que permita multiplicar 3 números.
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar al usuario los tres numeros
+        Console.WriteLine("Ingrese el primer numero:");
+        double numero1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Ingrese el segundo numero:");
+        double numero2 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Ingrese el tercer numero:");
+        double numero3 = Convert.ToDouble(Console.ReadLine());
+        // Calcular la multiplicación de los tres numeros
+        double resultado = numero1 * numero2 * numero3;
+        // Mostrar el resultado
+        Console.WriteLine($"El resultado de multiplicar {numero1}, {numero2} y {numero3} es: {resultado}");
+    }
+}
+
+
+2. Solicitar al usuario un número y calcular cuál es el cuadrado del número ($2^2=4$).
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar al usuario un numero
+        Console.WriteLine("Ingrese un numero para calcular su cuadrado:");
+        double numero = Convert.ToDouble(Console.ReadLine());
+        // Calcular el cuadrado del numero
+        double cuadrado = numero * numero;
+        // Mostrar el resultado
+        Console.WriteLine($"El cuadrado de {numero} es: {cuadrado}");
+    }
+}
+
+3. Programa para calcular la distancia recorrida en un movimiento rectilíneo. Recuerde $x=v*t$ donde $v$ es velocidad y $t$ es tiempo. Solicitar al usuario velocidad en kilómetros por hora (Km/h) y tiempo en horas (h) para obtener la distancia en kilómetros (Km).
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar al usuario la velocidad en Km/h
+        Console.WriteLine("Ingrese la velocidad en kilometros por hora (Km/h):");
+        double velocidad = Convert.ToDouble(Console.ReadLine());     
+        // Solicitar al usuario el tiempo en horas
+        Console.WriteLine("Ingrese el tiempo en horas:");
+        double tiempo = Convert.ToDouble(Console.ReadLine());
+        // Calcular la distancia recorrida
+        double distancia = velocidad * tiempo;
+        // Mostrar el resultado
+        Console.WriteLine($"La distancia recorrida es: {distancia} Km");
+    }
+}
+4. Programa que permita calcular la edad de una persona conociendo el año actual y el usuario digita su año de nacimiento.
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar el anio actual
+        Console.WriteLine("Ingrese el anio actual:");
+        int añoActual = Convert.ToInt32(Console.ReadLine());
+        // Solicitar el anio de nacimiento del usuario
+        Console.WriteLine("Ingrese su anio de nacimiento:");
+        int añoNacimiento = Convert.ToInt32(Console.ReadLine());
+        // Calcular la edad
+        int edad = añoActual - añoNacimiento;
+        // Mostrar la edad
+        Console.WriteLine($"Usted tiene {edad} anios.");
+    }
+}
+5. Programa para calcular el 20% de cualquier número de entrada.
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar al usuario un número
+        Console.WriteLine("Ingrese un numero para calcular el 20%:");
+        double numero = Convert.ToDouble(Console.ReadLine());
+        // Calcular el 20% del número
+        double porcentaje20 = numero * 0.20;
+        // Mostrar el resultado
+        Console.WriteLine($"El 20% de {numero} es: {porcentaje20}");
+    }
+}
+
+6. Programa que permita calcular el 30%, el 60% y el 90% de cualquier número.
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar al usuario un número
+        Console.WriteLine("Ingrese un numero:");
+        double numero = Convert.ToDouble(Console.ReadLine());
+        // Calcular los porcentajes
+        double porcentaje30 = numero * 0.30;
+        double porcentaje60 = numero * 0.60;
+        double porcentaje90 = numero * 0.90;
+        // Mostrar los resultados
+        Console.WriteLine($"El 30% de {numero} es: {porcentaje30}");
+        Console.WriteLine($"El 60% de {numero} es: {porcentaje60}");
+        Console.WriteLine($"El 90% de {numero} es: {porcentaje90}");
+    }
+}
+
+
+
+
+7. Programa para calcular el área de un cuadrado, la longitud de un lado la ingresa el usuario.
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar al usuario la longitud de un lado del cuadrado
+        Console.WriteLine("Ingrese la longitud de un lado del cuadrado:");
+        double lado = Convert.ToDouble(Console.ReadLine());
+        // Calcular el área del cuadrado
+        double area = lado * lado;
+        // Mostrar el resultado
+        Console.WriteLine($"El area del cuadrado con lado {lado} es: {area}");
+    }
+}
+8. Programa que permita ingresar 5 números y calcular el promedio.
+using System;
+class Program
+{
+    static void Main()
+    {
+        double suma = 0;
+        // Solicitar 5 números al usuario
+        for (int i = 1; i <= 5; i++)
+        {
+            Console.WriteLine($"Ingrese el numero {i}:");
+            double numero = Convert.ToDouble(Console.ReadLine());
+            suma += numero;
+        }
+        // Calcular el promedio
+        double promedio = suma / 5;
+        // Mostrar el resultado
+        Console.WriteLine($"El promedio de los 5 numeros es: {promedio}");
+    }
+}
+9. Programa que permita a una tienda saber el valor que pagara un cliente por la compra de varios elementos de la misma referencia. Debe tener como entradas el valor unitario, la cantidad de productos comprados y al valor final se debe adicionar el 16% correspondiente al IVA.
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar el valor unitario del producto
+        Console.WriteLine("Ingrese el valor unitario del producto:");
+        double valorUnitario = Convert.ToDouble(Console.ReadLine());
+        // Solicitar la cantidad de productos comprados
+        Console.WriteLine("Ingrese la cantidad de productos comprados:");
+        int cantidad = Convert.ToInt32(Console.ReadLine());
+        // Calcular el valor total sin IVA
+        double totalSinIVA = valorUnitario * cantidad;
+        // Calcular el IVA (16%)
+        double IVA = totalSinIVA * 0.16;
+        // Calcular el total con IVA
+        double totalConIVA = totalSinIVA + IVA;
+        // Mostrar el resultado
+        Console.WriteLine($"El total a pagar con IVA incluido es: {totalConIVA}");
+    }
+}
+10. Programa que permita determinar el salario a pagar a un empleado, teniendo como entradas el salario diario y el número de días trabajados. Tenga en cuenta que al empleado se le debe descontar el 10% por concepto de pensión y 15% por concepto de salud.
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar el salario diario
+        Console.WriteLine("Ingrese el salario diario del empleado:");
+        double salarioDiario = Convert.ToDouble(Console.ReadLine());
+        // Solicitar el número de días trabajados
+        Console.WriteLine("Ingrese el numero de dias trabajados:");
+        int diasTrabajados = Convert.ToInt32(Console.ReadLine());
+        // Calcular el salario bruto
+        double salarioBruto = salarioDiario * diasTrabajados;
+        // Calcular los descuentos
+        double descuentoPension = salarioBruto * 0.10;
+        double descuentoSalud = salarioBruto * 0.15;
+        // Calcular el salario neto
+        double salarioNeto = salarioBruto - descuentoPension - descuentoSalud;
+        // Mostrar el resultado
+        Console.WriteLine($"El salario neto a pagar es: {salarioNeto}");
+    }
+}
+11. Programa que solicite un número al usuario y permita calcular la raíz cuadrada del mismo (sin usar función).
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar al usuario un número
+        Console.WriteLine("Ingrese un numero para calcular su raiz cuadrada:");
+        double numero = Convert.ToDouble(Console.ReadLine());
+        // Calcular la raíz cuadrada manualmente usando el método de aproximación
+        double raiz = numero / 2; // Suposición inicial
+        double precision = 0.00001; // Precisión deseada
+        while (Math.Abs(raiz * raiz - numero) > precision)
+        {
+            raiz = (raiz + numero / raiz) / 2;
+        }
+        // Mostrar el resultado
+        Console.WriteLine($"La raiz cuadrada aproximada de {numero} es: {raiz}");
+    }
+}
+12. Calcular la hipotenusa con el Teorema de Pitágoras (sin usar funciones).
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar las longitudes de los catetos
+        Console.WriteLine("Ingrese la longitud del primer cateto:");
+        double cateto1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Ingrese la longitud del segundo cateto:");
+        double cateto2 = Convert.ToDouble(Console.ReadLine());
+        // Calcular el cuadrado de la hipotenusa
+        double hipotenusaCuadrada = cateto1 * cateto1 + cateto2 * cateto2;
+        // Calcular la hipotenusa usando el método de aproximación
+        double hipotenusa = hipotenusaCuadrada / 2; // Suposición inicial
+        double precision = 0.00001; // Precisión deseada
+        while (Math.Abs(hipotenusa * hipotenusa - hipotenusaCuadrada) > precision)
+        {
+            hipotenusa = (hipotenusa + hipotenusaCuadrada / hipotenusa) / 2;
+        }
+        // Mostrar el resultado
+        Console.WriteLine($"La hipotenusa del triangulo es: {hipotenusa}");
+    }
+}
+13. Solicitar tiempo en segundos y transformar a horas y minutos.
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar el tiempo en segundos
+        Console.WriteLine("Ingrese el tiempo en segundos:");
+        int segundos = Convert.ToInt32(Console.ReadLine());
+        // Calcular horas, minutos y segundos restantes
+        int horas = segundos / 3600;
+        int minutos = (segundos % 3600) / 60;
+        int segundosRestantes = segundos % 60;
+        // Mostrar el resultado
+        Console.WriteLine($"El tiempo es: {horas} horas, {minutos} minutos y {segundosRestantes} segundos.");
+    }
+}
+14. Solicitar al usuario una distancia en metros y transformar a km., cm. y mm.
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar la distancia en metros
+        Console.WriteLine("Ingrese la distancia en metros:");
+        double metros = Convert.ToDouble(Console.ReadLine());
+        // Convertir a kilómetros, centímetros y milímetros
+        double kilometros = metros / 1000;
+        double centimetros = metros * 100;
+        double milimetros = metros * 1000;
+        // Mostrar los resultados
+        Console.WriteLine($"Distancia en kilometros: {kilometros} km");
+        Console.WriteLine($"Distancia en centimetros: {centimetros} cm");
+        Console.WriteLine($"Distancia en milimetros: {milimetros} mm");
+    }
+}
+
+
