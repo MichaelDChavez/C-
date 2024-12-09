@@ -1,0 +1,281 @@
+Ciclos
+1. Escriba un programa para mostrar los primeros 10 números naturales.
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Mostrar un mensaje inicial
+        Console.WriteLine("Los primeros 10 numeros naturales son:");
+        // Usamos un bucle for para iterar del 1 al 10
+        for (int i = 1; i <= 10; i++)
+        {
+            // Mostramos el número actual
+            Console.WriteLine(i);
+        }
+    }
+}
+2. Escriba un programa para encontrar la suma de los primeros 20 números naturales. El total es 210.
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Variable para almacenar la suma
+        int suma = 0;
+        // Usamos un bucle for para sumar los números del 1 al 20
+        for (int i = 1; i <= 20; i++)
+        {
+            suma += i; // Añadimos cada número a la suma
+        }
+        // Mostramos el resultado
+        Console.WriteLine($"La suma de los primeros 20 nUmeros naturales es: {suma}");
+    }
+}
+3. Escriba un programa para mostrar n términos de número natural y su suma (Fibonacci). Se le solicita al usuario que ingrese el n término de la serie. Los primeros términos de la serie de Fibonacci son: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, y así sucesivamente.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Solicitar al usuario el número de términos de la serie de Fibonacci
+        Console.WriteLine("Ingrese el numero de terminos de la serie de Fibonacci:");
+        int n = Convert.ToInt32(Console.ReadLine());
+        // Verificar que el número sea válido
+        if (n <= 0)
+        {
+            Console.WriteLine("Por favor, ingrese un número mayor a 0.");
+            return;
+        }
+        // Inicializar los dos primeros términos de Fibonacci
+        int fib1 = 0, fib2 = 1;
+        int suma = 0; // Para almacenar la suma de los términos
+        Console.WriteLine($"Los primeros {n} terminos de la serie de Fibonacci son:");
+        // Calcular y mostrar los términos de Fibonacci
+        for (int i = 1; i <= n; i++)
+        {
+            Console.Write($"{fib1} "); // Mostrar el termino actual
+            suma += fib1; // Agregar el termino actual a la suma
+            // Calcular el siguiente termino
+            int siguiente = fib1 + fib2;
+            fib1 = fib2;
+            fib2 = siguiente;
+        }
+        // Mostrar la suma total
+        Console.WriteLine($"\nLa suma de los primeros {n} terminos de la serie de Fibonacci es: {suma}");
+    }
+}
+4. Escribe un programa para leer 10 números del teclado y encontrar su suma y promedio.
+using System;
+class Program
+{
+    static void Main()
+    {
+        double suma = 0; // Inicializamos la suma
+        int cantidadNumeros = 10; // Definimos la cantidad de numeros a leer
+        // Solicitar al usuario que ingrese 10 números
+        Console.WriteLine("Por favor, ingrese 10 numeros:");
+        // Usamos un bucle para leer los 10 números
+        for (int i = 1; i <= cantidadNumeros; i++)
+        {
+            Console.WriteLine($"Ingrese el numero {i}:");
+            double numero = Convert.ToDouble(Console.ReadLine());
+            // Agregar el numero ingresado a la suma
+            suma += numero;
+        }
+        // Calcular el promedio
+        double promedio = suma / cantidadNumeros;
+        // Mostrar los resultados
+        Console.WriteLine($"La suma de los 10 numeros es: {suma}");
+        Console.WriteLine($"El promedio de los 10 numeros es: {promedio}");
+    }
+}
+
+5. Escriba un programa para mostrar la tabla de multiplicar de un entero dado.
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar al usuario un número entero
+        Console.WriteLine("Ingrese un numero entero para mostrar su tabla de multiplicar:");
+        int numero = Convert.ToInt32(Console.ReadLine());
+        // Mostrar la tabla de multiplicar del número dado
+        Console.WriteLine($"Tabla de multiplicar del {numero}:");
+        // Usamos un bucle para generar la tabla de multiplicar del 1 al 10
+        for (int i = 1; i <= 10; i++)
+        {
+            // Calcular el resultado de la multiplicación
+            int resultado = numero * i;
+            // Mostrar el resultado
+            Console.WriteLine($"{numero} x {i} = {resultado}");
+        }
+    }
+}
+
+6. Escriba un programa para mostrar el patrón como triángulo con un asterisco. El patrón como:
+*
+**
+***
+****
+*****
+****
+***
+**
+*
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Número máximo de filas en la mitad superior del triángulo
+        int filas = 5;
+        // Generar la mitad superior del triángulo
+        for (int i = 1; i <= filas; i++)
+        {
+            for (int j = 1; j <= i; j++)
+            {
+                Console.Write("*");
+            }
+            Console.WriteLine(); // Salto de línea después de cada fila
+        }
+        // Generar la mitad inferior del triángulo
+        for (int i = filas - 1; i >= 1; i--)
+        {
+            for (int j = 1; j <= i; j++)
+            {
+                Console.Write("*");
+            }
+            Console.WriteLine(); // Salto de línea después de cada fila
+        }
+    }
+}
+7. Escriba un programa para mostrar el patrón como un triángulo rectángulo con un número. El patrón como:
+1
+12
+123
+1234
+12345
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Número de filas del triángulo
+        int filas = 6;
+        // Generar el triángulo
+        for (int i = 1; i <= filas; i++)
+        {
+            // Imprimir números en cada fila
+            for (int j = 1; j <= i; j++)
+            {
+                Console.Write(j);
+            }
+            Console.WriteLine(); // Salto de línea después de cada fila
+        }
+    }
+}
+
+
+8. Escriba un programa para hacer un patrón como una pirámide con números aumentados en 1.
+     1
+   2 3
+  4 5 6
+7 8 9 10
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Número de filas en la pirámide
+        int filas = 4;
+        // Variable para llevar el conteo de números
+        int numero = 1;
+        // Generar la pirámide
+        for (int i = 1; i <= filas; i++)
+        {
+            // Imprimir espacios iniciales para centrar la pirámide
+            for (int espacio = 1; espacio <= filas - i; espacio++)
+            {
+                Console.Write(" ");
+            }
+            // Imprimir los números de la fila
+            for (int j = 1; j <= i; j++)
+            {
+                Console.Write(numero + " ");
+                numero++; // Incrementar el número
+            }
+            // Salto de línea después de cada fila
+            Console.WriteLine();
+        }
+    }
+}
+9. Escriba un programa para calcular el factorial de un número dado.
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Solicitar al usuario un número
+        Console.WriteLine("Ingrese un numero entero para calcular su factorial:");
+        int numero = Convert.ToInt32(Console.ReadLine());
+        // Verificar si el número es negativo
+        if (numero < 0)
+        {
+            Console.WriteLine("El factorial no esta definido para numeros negativos.");
+            return;
+        }
+        // Calcular el factorial
+        long factorial = 1; // Usamos long para manejar números grandes
+        for (int i = 1; i <= numero; i++)
+        {
+            factorial *= i; // Multiplicar por el contador actual
+        }
+        // Mostrar el resultado
+        Console.WriteLine($"El factorial de {numero} es: {factorial}");
+    }
+}
+
+10. Escriba un programa para mostrar un patrón como Z con asteriscos.
+*******
+     *
+    *
+   *
+  *
+ *
+*******
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Número de filas del patrón
+        int filas = 7;
+        // Generar el patrón de "Z"
+        for (int i = 1; i <= filas; i++)
+        {
+            for (int j = 1; j <= filas; j++)
+            {
+                // Primera fila o última fila: imprimir asteriscos
+                if (i == 1 || i == filas)
+                {
+                    Console.Write("*");
+                }
+                // Diagonal inversa: verificar si la columna coincide con la fila inversa
+                else if (j == filas - i + 1)
+                {
+                    Console.Write("*");
+                }
+                // Espacios en cualquier otro caso
+                else
+                {
+                    Console.Write(" ");
+                }
+            }
+            // Salto de línea después de cada fila
+            Console.WriteLine();
+        }
+    }
+}
+
