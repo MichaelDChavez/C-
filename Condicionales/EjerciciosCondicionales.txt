@@ -1,0 +1,583 @@
+Condicionales
+1. Solicitar número al usuario y determinar si es par, impar o es cero.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Ingrese un numero: ");
+        int numero = int.Parse(Console.ReadLine());
+
+        if (numero == 0)
+        {
+            Console.WriteLine("El numero es cero.");
+        }
+        else if (numero % 2 == 0)
+        {
+            Console.WriteLine("El numero es par.");
+        }
+        else
+        {
+            Console.WriteLine("El numero es impar.");
+        }
+    }
+}
+2. Preguntar al usuario el nombre y la edad, si es mayor o igual a 18 años mostrar el mensaje "Usted es mayor de edad", de lo contrario "Usted es menor de edad". Si el número ingresado es negativo o la edad ingresada es mayor a 100 años, mostrar al usuario un mensaje de ingresar una edad válida.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Ingrese su nombre: ");
+        string nombre = Console.ReadLine();
+        
+        Console.Write("Ingrese su edad: ");
+        int edad = int.Parse(Console.ReadLine());
+
+        if (edad < 0 || edad > 100)
+        {
+            Console.WriteLine("Ingrese una edad valida.");
+        }
+        else if (edad >= 18)
+        {
+            Console.WriteLine("Usted es mayor de edad.");
+        }
+        else
+        {
+            Console.WriteLine("Usted es menor de edad.");
+        }
+    }
+}
+3. Solicitar número al usuario y determinar si es negativo, positivo o cero.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Ingrese un numero: ");
+        int numero = int.Parse(Console.ReadLine());
+
+        if (numero == 0)
+        {
+            Console.WriteLine("El numero es cero.");
+        }
+        else if (numero > 0)
+        {
+            Console.WriteLine("El numero es positivo.");
+        }
+        else
+        {
+            Console.WriteLine("El numero es negativo.");
+        }
+    }
+}
+4. Solicitar dos números al usuario y calcular cuál es el mayor y cuál el menor, e imprimir el resultado.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Ingrese el primer numero: ");
+        int numero1 = int.Parse(Console.ReadLine());
+        
+        Console.Write("Ingrese el segundo numero: ");
+        int numero2 = int.Parse(Console.ReadLine());
+
+        if (numero1 == numero2)
+        {
+            Console.WriteLine("Los dos numeros son iguales.");
+        }
+        else if (numero1 > numero2)
+        {
+            Console.WriteLine("El primer numero es mayor y el segundo numero es menor.");
+        }
+        else
+        {
+            Console.WriteLine("El segundo numero es mayor y el primer numero es menor.");
+        }
+    }
+}
+5. Solicitar cinco (5) notas de 0.0 a 5.0 a un estudiante y calcular promedio. Mostrar como "Aprobó" si el promedio es mayor o igual a 3.0, o mostrar "No aprobó" si su nota es menor a 3.0.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double[] notas = new double[5];
+
+        for (int i = 0; i < 5; i++)
+        {
+            Console.Write($"Ingrese la nota {i + 1}: ");
+            notas[i] = double.Parse(Console.ReadLine());
+        }
+
+        double promedio = 0;
+        foreach (double nota in notas)
+        {
+            promedio += nota;
+        }
+        promedio /= notas.Length;
+
+        if (promedio >= 3.0)
+        {
+            Console.WriteLine("Aprobo.");
+        }
+        else
+        {
+            Console.WriteLine("No aprobo.");
+        }
+    }
+}
+6. Crear un programa con un menú de opciones, que permita calcular las áreas de figuras geométricas que se muestran a continuación. 
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string menu = "Seleccione una opcion:\n" +
+                      "1- Calcular el area de un cuadrado\n" +
+                      "2- Calcular el area de un rectangulo\n" +
+                      "3- Calcular el area de un paralelogramo\n" +
+                      "4- Calcular el area de un rombo\n" +
+                      "5- Calcular el area de un trapecio\n" +
+                      "6- Calcular el area de un triangulo\n" +
+                      "7- Calcular el area de un poligono regular\n" +
+                      "8- Salir\n";
+
+        Console.Write(menu);
+        int opcion = int.Parse(Console.ReadLine());
+
+        switch (opcion)
+        {
+            case 1:
+                Console.Write("Ingresa el lado del cuadrado: ");
+                double ladoCuadrado = double.Parse(Console.ReadLine());
+                double areaCuadrado = ladoCuadrado * ladoCuadrado;
+                Console.WriteLine($"El area del cuadrado es: {areaCuadrado}");
+                break;
+
+            case 2:
+                Console.Write("Escriba la base del rectangulo: ");
+                double baseRectangulo = double.Parse(Console.ReadLine());
+                Console.Write("Escriba la altura del rectangulo: ");
+                double alturaRectangulo = double.Parse(Console.ReadLine());
+                double areaRectangulo = baseRectangulo * alturaRectangulo;
+                Console.WriteLine($"El area del rectangulo es: {areaRectangulo}");
+                break;
+
+            case 3:
+                Console.Write("Digite la base del paralelogramo: ");
+                double baseParalelogramo = double.Parse(Console.ReadLine());
+                Console.Write("Digite la altura del paralelogramo: ");
+                double alturaParalelogramo = double.Parse(Console.ReadLine());
+                double areaParalelogramo = baseParalelogramo * alturaParalelogramo;
+                Console.WriteLine($"El area del paralelogramo es: {areaParalelogramo}");
+                break;
+
+            case 4:
+                Console.Write("¿Cuál es el valor de la relación entre los lados A y C? ");
+                double ladoAC = double.Parse(Console.ReadLine());
+                Console.Write("¿Cuál es el valor de la relación entre los lados B y D? ");
+                double ladoBD = double.Parse(Console.ReadLine());
+                double areaRombo = (ladoAC * ladoBD) / 2;
+                Console.WriteLine($"El area del rombo es: {areaRombo}");
+                break;
+
+            case 5:
+                Console.Write("Ingrese el lado A: ");
+                double ladoA = double.Parse(Console.ReadLine());
+                Console.Write("Ingrese el lado B: ");
+                double ladoB = double.Parse(Console.ReadLine());
+                double baseTrapecio = (ladoA + ladoB) / 2;
+                Console.Write("Ingrese la altura del trapecio: ");
+                double alturaTrapecio = double.Parse(Console.ReadLine());
+                double areaTrapecio = alturaTrapecio * baseTrapecio;
+                Console.WriteLine($"El area del trapecio es: {areaTrapecio}");
+                break;
+
+            case 6:
+                Console.Write("Ingrese la altura del triangulo: ");
+                double alturaTriangulo = double.Parse(Console.ReadLine());
+                Console.Write("Ingrese la base del triangulo: ");
+                double baseTriangulo = double.Parse(Console.ReadLine());
+                double areaTriangulo = (alturaTriangulo * baseTriangulo) / 2;
+                Console.WriteLine($"El area del triangulo es: {areaTriangulo}");
+                break;
+
+            case 7:
+                Console.Write("Ingrese el apotema: ");
+                double apotema = double.Parse(Console.ReadLine());
+                Console.Write("Ingrese el perimetro del poligono: ");
+                double perimetroPoligono = double.Parse(Console.ReadLine());
+                double areaPoligono = (perimetroPoligono * apotema) / 2;
+                Console.WriteLine($"El area del poligono es: {areaPoligono}");
+                break;
+
+            case 8:
+                Console.WriteLine("Saliendo del programa...");
+                break;
+
+            default:
+                Console.WriteLine("Opcion no valida, por favor ingresar una opcion valida (1-8).");
+                break;
+        }
+    }
+}
+7. Conversión de temperaturas. Crear un menú de opciones.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string menu = @"
+Seleccione una opcion:
+(1) Convertir de Celsius a Fahrenheit
+(2) Convertir de Fahrenheit a Celsius
+(3) Convertir de Celsius a Kelvin
+(4) Convertir de Celsius a Rankine
+(5) Convertir de Celsius a Reaumur
+(6) Salir
+";
+
+        while (true)
+        {
+            // Mostrar el menú y solicitar la opción al usuario
+            Console.WriteLine(menu);
+            Console.Write("Ingrese el numero de la opcion que desea realizar o '6' para salir: ");
+            string opcion = Console.ReadLine();
+
+            // Convertir de Celsius a Fahrenheit
+            if (opcion == "1")
+            {
+                Console.Write("Ingrese la temperatura en grados Celsius: ");
+                double celsius = double.Parse(Console.ReadLine());
+                double fahrenheit = (celsius * 9 / 5) + 32;
+                Console.WriteLine($"{celsius} grados Celsius equivalen a {fahrenheit:F2} grados Fahrenheit.\n");
+            }
+            // Convertir de Fahrenheit a Celsius
+            else if (opcion == "2")
+            {
+                Console.Write("Ingrese la temperatura en grados Fahrenheit: ");
+                double fahrenheit = double.Parse(Console.ReadLine());
+                double celsius = (fahrenheit - 32) * 5 / 9;
+                Console.WriteLine($"{fahrenheit} grados Fahrenheit equivalen a {celsius:F2} grados Celsius.\n");
+            }
+            // Convertir de Celsius a Kelvin
+            else if (opcion == "3")
+            {
+                Console.Write("Ingrese la temperatura en grados Celsius: ");
+                double celsius = double.Parse(Console.ReadLine());
+                double kelvin = celsius + 273.15;
+                Console.WriteLine($"{celsius} grados Celsius equivalen a {kelvin:F2} grados Kelvin.\n");
+            }
+            // Convertir de Celsius a Rankine
+            else if (opcion == "4")
+            {
+                Console.Write("Ingrese la temperatura en grados Celsius: ");
+                double celsius = double.Parse(Console.ReadLine());
+                double rankine = (celsius + 273.15) * 9 / 5;
+                Console.WriteLine($"{celsius} grados Celsius equivalen a {rankine:F2} grados Rankine.\n");
+            }
+            // Convertir de Celsius a Reaumur
+            else if (opcion == "5")
+            {
+                Console.Write("Ingrese la temperatura en grados Celsius: ");
+                double celsius = double.Parse(Console.ReadLine());
+                double reaumur = celsius * 4 / 5;
+                Console.WriteLine($"{celsius} grados Celsius equivalen a {reaumur:F2} grados Reaumur.\n");
+            }
+            // Salir del programa
+            else if (opcion == "6")
+            {
+                Console.WriteLine("¡Hasta luego!");
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Opcion no valida. Por favor ingrese una opcion valida (1, 2, 3, 4, 5 o 6).\n");
+            }
+        }
+    }
+}
+8. Solicitar tres números al usuario e imprimirlos en orden ascendente y descendente.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] numeros = new int[3];
+
+        for (int i = 0; i < 3; i++)
+        {
+            Console.Write($"Ingrese el numero {i + 1}: ");
+            numeros[i] = int.Parse(Console.ReadLine());
+        }
+
+        Array.Sort(numeros);
+        Console.WriteLine("Orden ascendente: " + string.Join(", ", numeros));
+
+        Array.Reverse(numeros);
+        Console.WriteLine("Orden descendente: " + string.Join(", ", numeros));
+    }
+}
+9. Programa que permita a un usuario tomar una decisión del tipo de pago a usar. Si la cuenta es menor a $150000 pago en efectivo. Si no, si es de $150000 hasta $300000 pago con el celular (dinero electrónico). Si es mayor a $300000 hasta $600000, pago con la tarjeta de débito. Todos los valores superiores a $6000000, pago con la tarjeta de crédito.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Leer el monto de la cuenta desde el usuario
+        Console.Write("Ingrese el monto de la cuenta: ");
+        double montoCuenta = double.Parse(Console.ReadLine());
+
+        if (montoCuenta < 150000)
+        {
+            Console.WriteLine("Forma de pago: Efectivo");
+        }
+        else if (montoCuenta <= 300000)
+        {
+            Console.WriteLine("Forma de pago: Pago con celular (dinero electronico)");
+        }
+        else if (montoCuenta <= 600000)
+        {
+            Console.WriteLine("Forma de pago: Pago con tarjeta de debito");
+        }
+        else
+        {
+            Console.WriteLine("Forma de pago: Pago con tarjeta de credito");
+        }
+    }
+}
+10. Leer el número de llantas de una compra y mostrar el valor que debe pagarse. El almacén las vende con la siguiente política: Si se compran menos de 6 llantas, el precio unitario es $240000. Si se compran 6 o 7, el precio unitario es $221000, y si se compran más de 7 llantas, el precio unitario es $180000.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Ingrese la cantidad de llantas compradas: ");
+        int cantidadLlantas = int.Parse(Console.ReadLine());
+        int precioUnitario;
+
+        if (cantidadLlantas < 6)
+        {
+            precioUnitario = 240000;
+        }
+        else if (cantidadLlantas <= 7)
+        {
+            precioUnitario = 221000;
+        }
+        else
+        {
+            precioUnitario = 180000;
+        }
+
+        int total = cantidadLlantas * precioUnitario;
+        Console.WriteLine($"El valor a pagar es: {total}");
+    }
+}
+11. El precio que debe pagar un cliente por una pizza depende del tamaño seleccionado, como se muestra a continuación:
+TAMAÑO 1 = 15000, TAMAÑO 2 = 24000, TAMAÑO 3 = 36000
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Ingrese el tamano de la pizza (1: pequena, 2: mediana, 3: grande): ");
+        int tamanoPizza = int.Parse(Console.ReadLine());
+        
+        Console.Write("Ingrese la cantidad de ingredientes adicionales: ");
+        int ingredientesAdicionales = int.Parse(Console.ReadLine());
+
+        int precioPizza = 0;
+
+        switch (tamanoPizza)
+        {
+            case 1:
+                precioPizza = 15000;
+                break;
+            case 2:
+                precioPizza = 24000;
+                break;
+            case 3:
+                precioPizza = 36000;
+                break;
+            default:
+                Console.WriteLine("Tamano de pizza no valido.");
+                return; // Termina el programa si el tamaño es inválido.
+        }
+
+        int precioTotal = precioPizza + (ingredientesAdicionales * 4000);
+        Console.WriteLine($"El precio a pagar es: {precioTotal}");
+    }
+}
+12.  Si cada ingrediente adicional cuesta $4.000. Escribir un programa que solicite al empleado encargado de registrar las ventas, el tamaño de la pizza y el número de ingredientes adicionales y muestre al cliente el precio que debe pagar.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Seleccione el tamano de la pizza:");
+        Console.WriteLine("1. Tamano 1 (15,000)");
+        Console.WriteLine("2. Tamano 2 (24,000)");
+        Console.WriteLine("3. Tamano 3 (36,000)");
+
+        // Solicitar el tamaño de la pizza
+        Console.Write("Ingrese el numero correspondiente al tamano: ");
+        int tamañoSeleccionado = int.Parse(Console.ReadLine());
+
+        // Determinar el precio base de la pizza
+        int precioBase = 0;
+        if (tamañoSeleccionado == 1)
+        {
+            precioBase = 15000;
+        }
+        else if (tamañoSeleccionado == 2)
+        {
+            precioBase = 24000;
+        }
+        else if (tamañoSeleccionado == 3)
+        {
+            precioBase = 36000;
+        }
+        else
+        {
+            Console.WriteLine("Tamano invalido. Por favor, seleccione entre 1, 2 o 3.");
+            return;
+        }
+
+        // Solicitar el número de ingredientes adicionales
+        Console.Write("Ingrese el numero de ingredientes adicionales: ");
+        int ingredientesAdicionales = int.Parse(Console.ReadLine());
+
+        // Calcular el costo adicional por los ingredientes
+        int costoAdicional = ingredientesAdicionales * 4000;
+
+        // Calcular el precio total
+        int precioTotal = precioBase + costoAdicional;
+
+        // Mostrar el resultado
+        Console.WriteLine($"\nEl precio de la pizza tamano {tamañoSeleccionado} con {ingredientesAdicionales} ingredientes adicionales es: {precioTotal:C0}");
+    }
+}
+13. Un local vende sus productos con la siguiente promoción. Si compra hasta 5 artículos, no hay descuento. Si compra más de 5 artículos, pero menos de 10, el precio unitario se reduce en 5%. Si compra 10 o más artículos, el precio unitario se reduce en 8%. Ingrese un dato de cantidad y el valor del precio unitario original. Calcule y muestre el valor total a pagar.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Ingrese la cantidad de articulos comprados: ");
+        int cantidadArticulos = int.Parse(Console.ReadLine());
+
+        Console.Write("Ingrese el precio unitario original: ");
+        double precioUnitarioOriginal = double.Parse(Console.ReadLine());
+
+        double descuento;
+
+        if (cantidadArticulos <= 5)
+        {
+            descuento = 0;
+        }
+        else if (cantidadArticulos < 10)
+        {
+            descuento = 0.05;
+        }
+        else
+        {
+            descuento = 0.08;
+        }
+
+        double totalPagar = cantidadArticulos * precioUnitarioOriginal * (1 - descuento);
+        Console.WriteLine($"El total a pagar es: {totalPagar}");
+    }
+}
+
+14. Un reporte de salud muestra una tabla diferente del índice de masa corporal IMC de una persona que se calcula con la fórmula IMC=P/(E*E) en donde P es el peso en Kg. y E es la estatura en metros. Lea un valor de P y de E, calcule el IMC y muestre su estado según la siguiente tabla:
+
+IMCEstadoMenor a 18.5Desnutrido[18.5, 25)Normal[25,30)Sobrepeso[30,35)Obesidad Grado 1[35,40)Obesidad Grado 2[40,50)Obesidad Grado 3Mayor o igual a 50Obesidad Grado 4using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Ingrese su peso en Kg: ");
+        double peso = double.Parse(Console.ReadLine());
+
+        Console.Write("Ingrese su estatura en metros: ");
+        double estatura = double.Parse(Console.ReadLine());
+
+        double imc = peso / (estatura * estatura);
+
+        if (imc < 18.5)
+        {
+            Console.WriteLine("Desnutrido");
+        }
+        else if (imc < 25)
+        {
+            Console.WriteLine("Normal");
+        }
+        else if (imc < 30)
+        {
+            Console.WriteLine("Sobrepeso");
+        }
+        else if (imc < 35)
+        {
+            Console.WriteLine("Obesidad Grado 1");
+        }
+        else if (imc < 40)
+        {
+            Console.WriteLine("Obesidad Grado 2");
+        }
+        else if (imc < 50)
+        {
+            Console.WriteLine("Obesidad Grado 3");
+        }
+        else
+        {
+            Console.WriteLine("Obesidad Grado 4");
+        }
+    }
+}
+15. El número de pulsaciones que debe tener una persona por cada 10 segundos de ejercicio aeróbico se calcula con la fórmula:
+Género femenino (1): número de pulsaciones = (220 - edad en años)/10
+Género masculino (2): número de pulsaciones = (210 - edad en años)/10
+Lea la edad y el género y muestre el número de pulsaciones.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Ingrese su edad: ");
+        int edad = int.Parse(Console.ReadLine());
+
+        Console.Write("Ingrese su genero (1: femenino, 2: masculino): ");
+        int genero = int.Parse(Console.ReadLine());
+
+        double pulsaciones;
+
+        if (genero == 1)
+        {
+            pulsaciones = (220 - edad) / 10.0;
+        }
+        else
+        {
+            pulsaciones = (210 - edad) / 10.0;
+        }
+
+        Console.WriteLine($"El numero de pulsaciones es: {pulsaciones}");
+    }
+}
+

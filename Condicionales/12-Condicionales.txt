@@ -1,0 +1,49 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Seleccione el tamano de la pizza:");
+        Console.WriteLine("1. Tamano 1 (15,000)");
+        Console.WriteLine("2. Tamano 2 (24,000)");
+        Console.WriteLine("3. Tamano 3 (36,000)");
+
+        // Solicitar el tamaño de la pizza
+        Console.Write("Ingrese el numero correspondiente al tamano: ");
+        int tamañoSeleccionado = int.Parse(Console.ReadLine());
+
+        // Determinar el precio base de la pizza
+        int precioBase = 0;
+        if (tamañoSeleccionado == 1)
+        {
+            precioBase = 15000;
+        }
+        else if (tamañoSeleccionado == 2)
+        {
+            precioBase = 24000;
+        }
+        else if (tamañoSeleccionado == 3)
+        {
+            precioBase = 36000;
+        }
+        else
+        {
+            Console.WriteLine("Tamano invalido. Por favor, seleccione entre 1, 2 o 3.");
+            return;
+        }
+
+        // Solicitar el número de ingredientes adicionales
+        Console.Write("Ingrese el numero de ingredientes adicionales: ");
+        int ingredientesAdicionales = int.Parse(Console.ReadLine());
+
+        // Calcular el costo adicional por los ingredientes
+        int costoAdicional = ingredientesAdicionales * 4000;
+
+        // Calcular el precio total
+        int precioTotal = precioBase + costoAdicional;
+
+        // Mostrar el resultado
+        Console.WriteLine($"\nEl precio de la pizza tamano {tamañoSeleccionado} con {ingredientesAdicionales} ingredientes adicionales es: {precioTotal:C0}");
+    }
+}
